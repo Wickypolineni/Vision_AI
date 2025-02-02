@@ -1,0 +1,26 @@
+# Ignore virtual environment folder
+myenv/
+venv/
+env/
+*.env/
+
+# Ignore the uploads directory
+uploads/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore environment variables file
+.env
+
+# Ignore system files
+.DS_Store
+Thumbs.db

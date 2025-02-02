@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moondream Vision App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="stuff">
+        <div class="flex">
+            <div class="left">
+                <div class="video-container">
+                    <video id="webcam" autoplay></video>
+                    <canvas id="canvas"></canvas>
+                </div>
+                <div class="camera-controls">
+                    <select id="cameraSelect"></select>
+                    <button id="startCamera">Start Camera 🎥</button>
+                    <button id="stopCamera">Stop Camera ⏹</button>
+                </div>
+            </div>
+            <div class="right">
+                <textarea id="prompt" placeholder="What do you see in this picture? Describe in detail, along with reasoning."></textarea>
+                <div class="prompt-controls">
+                    <button id="ask">Ask Moondream</button>
+                    <button id="speak">Speak</button>
+                </div>
+                <p id="response"></p>
+            </div>
+        </div>
+        <p id="status"></p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

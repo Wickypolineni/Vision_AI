@@ -1,0 +1,143 @@
+* {
+    font-weight: 300;
+    font-family: system-ui;
+    --primary: #588fec;
+    --bg: #1b1b1b;
+    --text: #ffffff;
+    --thickness: 1px;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.stuff {
+    margin: auto;
+    width: 90vw; /* Adjusted for mobile */
+    padding: 10px; /* Reduced padding for mobile */
+}
+
+.flex {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on mobile */
+    gap: 1rem; /* Reduced gap for mobile */
+}
+
+.left, .right {
+    flex: 1;
+    width: 100%; /* Full width on mobile */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#webcam, #canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.camera-controls {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+textarea {
+    width: 100%;
+    height: 100px; /* Reduced height for mobile */
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    resize: vertical;
+    background-color: black;
+    color: white;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+}
+
+.prompt-controls {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+button, select {
+    width: 100%; /* Full width on mobile */
+    padding: 0.8rem;
+    background-color: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover, select:hover {
+    background-color: var(--primary);
+    transition: all 200ms;
+}
+
+button:disabled, select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:disabled:hover, select:disabled:hover {
+    background-color: var(--bg);
+}
+
+#response {
+    margin-top: 1rem; /* Reduced margin for mobile */
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+#status {
+    margin-top: 1rem;
+    color: var(--primary);
+    font-size: 0.9rem; /* Smaller font size for mobile */
+}
+
+/* Desktop-specific styles */
+@media only screen and (min-width: 768px) {
+    .stuff {
+        width: 75vw;
+        padding: 20px;
+    }
+
+    .flex {
+        flex-direction: row; /* Side-by-side layout on desktop */
+        gap: 2rem;
+    }
+
+    .camera-controls {
+        flex-direction: row; /* Side-by-side buttons on desktop */
+    }
+
+    .prompt-controls {
+        flex-direction: row; /* Side-by-side buttons on desktop */
+    }
+
+    textarea {
+        height: 150px; /* Larger height for desktop */
+    }
+
+    button, select {
+        width: auto; /* Auto width for desktop */
+    }
+}
